@@ -9,3 +9,36 @@ html, body {
     --middle: blue;
     --finish: green;
 } 
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 40px;
+    background-color: var(--progressbar-bg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.progress-bar .progress-status {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, var(--start) 0%, var(--middle) 50%, var(--finish) 100%);
+    animation: fillProgress 5s ease-in-out forwards;
+}
+
+@keyframes fillProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
